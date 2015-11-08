@@ -1,0 +1,56 @@
+---
+title: "project3"
+author: "lUis Hernandez Centti"
+date: "Monday, October 13, 2014"
+output: html_document
+---
+
+This is project 3 for is360. I selected the data package airquality and then added variables to make it a wider data. Then I filter day month with the a new variable called RealFEEL that was calculated from the formula to calculate the REeall feel sensation(apparent weather sensation), for that I needed to first find the Wind chill Temperature.
+
+**Equation for Windchill:**
+
+T{wc}=13.12 + 0.6215 T_a-11.37 V^{+0.16} + 0.3965 T_a V^{+0.16}
+
+Twc = Wind Chill Temperature, Ta = Atmospheric Temperature (F), and V = Air Speed (mph) (Source).
+
+**Equation to find the appararent temperature:**
+
+the formula for the AT is: 
+AT=T_a+0.348*e-0.70*ws+0.70\frac{Q}{ws+10}-4.25
+
+```{r}
+summary(airquality)
+summmary(monthly)
+```
+
+First plot for the REal FEel monthly report:
+
+```{r, echo=FALSE}
+ggplot(airquality, aes(x=RealFeel)) +
+geom_bar(width =.3)
+
+Heres another way to plot it using barplot
+barplot(t(as.matrix(monthly)), main="MONTHLY REAL FEEL",beside=TRUE)
+
+```
+
+
+then the second colored plot for the REal FEel monthly report:
+
+```{r, echo=FALSE}
+library("RColorBrewer")
+coloredplot <- rev(colorRampPalette(brewer.pal(9, "RdYlBu"))(32))
+
+filled.contour(t, v, rf , col=coloredplot, main="Monthly Real Feel",
+nlevels=31, xlab="Temperature (??F)", ylab="Windspeed (mph)",
+key.title=title("??F"), key.axes=axis(4, seq(-120, 40, by=20)),
+zlim=c(-120,40))
+```
+
+
+**SOURCES**
+To get the wind chill equation
+http://planetcalc.com/2087/
+
+to get the apparent temperature equation
+http://planetcalc.com/2089/

@@ -1,0 +1,75 @@
+
+
+> #What versions of R and RStudio do you have installed?
+> version
+               _                           
+platform       x86_64-w64-mingw32          
+arch           x86_64                      
+os             mingw32                     
+system         x86_64, mingw32             
+status                                     
+major          3                           
+minor          1.1                         
+year           2014                        
+month          07                          
+day            10                          
+svn rev        66115                       
+language       R                           
+version.string R version 3.1.1 (2014-07-10)
+nickname       Sock it to Me               
+
+> #What version of PostgreSQL do you have installed?
+> #SELECT version();
+> #"PostgreSQL 9.3.5, compiled by Visual C++ build 1600, 64-bit"
+
+> #to install the R package
+> install.packages("DMwR")
+--- Please select a CRAN mirror for use in this session ---
+trying URL 'http://mirror.fcaglp.unlp.edu.ar/CRAN/bin/windows/contrib/3.1/DMwR_0.4.1.zip'
+Content type 'application/zip' length 3057245 bytes (2.9 Mb)
+opened URL
+downloaded 873 Kb
+
+Error in read.dcf(file.path(pkgname, "DESCRIPTION"), c("Package", "Type")) : 
+  cannot open the connection
+In addition: Warning messages:
+1: In download.file(url, destfile, method, mode = "wb", ...) :
+  downloaded length 894172 != reported length 3057245
+2: In unzip(zipname, exdir = dest) : error 1 in extracting from zip file
+3: In read.dcf(file.path(pkgname, "DESCRIPTION"), c("Package", "Type")) :
+  cannot open compressed file 'DMwR/DESCRIPTION', probable reason 'No such file or directory'
+> require(DMwR)
+Loading required package: DMwR
+Loading required package: lattice
+Loading required package: grid
+KernSmooth 2.23 loaded
+Copyright M. P. Wand 1997-2009
+
+> #i had DMwR package installed before. To load DMwr, requied(DMwr)
+
+> #to view the data sales 
+> View(sales)
+> #to view the data diamonds
+> View(diamonds)
+
+> #Here is how to load the inspect
+> # the dataset diamonds in package ggplot2:
+> install.packages("ggplot2")
+trying URL 'http://mirror.fcaglp.unlp.edu.ar/CRAN/bin/windows/contrib/3.1/ggplot2_1.0.0.zip'
+Content type 'application/zip' length 2673781 bytes (2.5 Mb)
+opened URL
+downloaded 413 Kb
+
+Error in read.dcf(file.path(pkgname, "DESCRIPTION"), c("Package", "Type")) : 
+  cannot open the connection
+In addition: Warning messages:
+1: In download.file(url, destfile, method, mode = "wb", ...) :
+  downloaded length 423724 != reported length 2673781
+2: In unzip(zipname, exdir = dest) : error 1 in extracting from zip file
+3: In read.dcf(file.path(pkgname, "DESCRIPTION"), c("Package", "Type")) :
+  cannot open compressed file 'ggplot2/DESCRIPTION', probable reason 'No such file or directory'
+  
+> #after that we can now select diamonds to see its observations
+> View(diamonds)
+
+> #and the number of observations for diamonds is 53940

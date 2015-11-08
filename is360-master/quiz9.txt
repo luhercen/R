@@ -1,0 +1,29 @@
+Week 9 Quiz
+Luis Hernandez
+
+1) Compare scraping web pages with using a web API. Describe when each approach would be preferred.
+
+There are many differences between the two options to get data from websites, for example API is a more structured. The access is already defined by the developer. 
+API's have rapid attempts to obtain data using the API may be purposely slowed. 
+Web scraping will generally require good knowledge of HTML and regular expressions to sanitize the data.
+When the API provides the data and there are methods already available to get the data, it would be better to use API. Web scraping is not as structured and because of that it is more flexible. When an API doesnt provide the data or methods to get the data, may be better to do web scraping.
+The way webpages are redesigned, what once may have been scrapable before, may not work the next time
+due to changes in the format or design of the page, for this reasons we look for developers to make it easuir to get info.
+
+2)2. What is the difference between web scraping and web crawling?
+
+Web crawling is when you automatically retreive pages and their links, web scraping is when you extract information from web pages to a table.
+
+3) What is the purpose of robots.txt?
+
+The robots exclusion protocol (REP), or robots.txt is a text file webmasters create to instruct
+# robots (typically search engine robots) how to crawl and index pages on their website.
+http://moz.com/learn/seo/robotstxt
+
+Robots.txt file tells search robots which pages you would not like them to visit.
+
+4) For scraping web pages (from your experience and/or research) would you describe R as (a) ideal, (b) adequate, or (c) not fit for task?
+
+R may be or not usually the best for web scrapping data, the tools offered are useful but they can be better.
+
+

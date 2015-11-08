@@ -1,0 +1,33 @@
+IS360
+Week 8 quiz
+Luis Hernandez
+
+1. Describe in a two or three bullet points why might one want to make a presentation using Beamer instead of Microsoft PowerPoint or Apple Keynote?
+-Because Beamer allows the author to export a presentation from a structured, R-centric manner.  
+-Because It is free  and also it is open Source Software
+-It can work with R functions presentation on markdown.
+
+2. How does packrat make R projects more isolated, and what are the benefits derived from this project isolation?
+There are several benefits from this, for example:
+Some of them as noted on various websites:
+The important configuration management, dependency management, and facilitates the creation of isolated, portable, and a reproducable environments for R projects.
+Ability to isolate your project and installed libraries from the user library. Packrat created a private package library for a given R project.
+Ability to easily share your project, as well as required dependencies, with others
+Ability to restrict packages to specific version numbers, thus preventing conflicts such as API changes that may break a project
+
+3. In an R Markdown document, how do you keep the code from displaying? [Include code to show how this is accomplished]
+ ```{r, echo = FALSE}
+ #here goes the code
+ ```
+
+4. In an R Markdown document, how do you keep the results of the code from displaying? [Include code to show how this is accomplished]
+ ```{r, results = 'hide'}
+ # here goes the code
+ ```
+
+5. Can you run Python code inside of an R Markdown document? [If so, include code to show how this is accomplished]
+Yes we can by inserteing the engine option
+```{r, engine = 'python'} 
+x = 'message goes here'
+print(x)
+```

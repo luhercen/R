@@ -1,0 +1,100 @@
+---
+title: "Week 8 Assignment"
+author: "Luis Hernandez Centti"
+date: "Wednesday, October 22, 2014"
+output: html_document
+---
+#**Intro**
+<br>
+This week 8 assignment abour rmkadown is based on my project 3. This report is based on the airquality package, and then I added a couple of variables to make it a wider data.My goal here was to calculate the real feel sensation of tempertaure, how the weather channels and weather scientific do it, they calculate their reports based on mathematical formulas, we need to create new variable in order to calcualte the real feel sensation.
+I added the variable Windchill temperature and then the resultant variable RealFeel.
+
+
+To calculate the Windchill temperature we needed to know the atmospheric temperature and the air speed, both of this we got it from the original aiquality package. Here is the formula how to calculate the windchill:
+
+<br>
+
+###**Equation for Windchill:** 
+
+T{wc}=13.12 + 0.6215 T_a-11.37 V^{+0.16} + 0.3965 T_a V^{+0.16}
+
+Twc = Wind Chill Temperature, Ta = Atmospheric Temperature (F), and V = Air Speed (mph) (Source).
+
+Also we can get accurate and hourly windchill temperature from this graph, by updating the requied values onto the formula.
+
+![Caption for the picture.](http://www.nws.noaa.gov/om/windchill/images/windchill.gif)
+
+<br>
+
+To calcualte  the apparent temperature of also called the Real feel temperature we used the following formula:
+
+<br>
+
+##**Equation to find the appararent temperature:**
+
+the formula for the AT is: AT=T_a+0.348*e-0.70*ws+0.70\frac{Q}{ws+10}-4.25
+
+Ta = Dry bulb temperature (°C) 
+e = Water vapour pressure (hPa) [humidity] 
+ws = Wind speed (m/s) at an elevation of 10 meters 
+Q = Net radiation absorbed per unit area of body surface (w/m2) 
+
+
+```{r, echo=FALSE}
+require(dplyr)
+require(tidyr)
+require(ggplot2)
+```
+
+<br>
+
+###**Then from we get this information on the airquality data set**
+
+The monthly data set is more accurate because it show only the values with accurate information, filtering out the NAs.
+
+```{r}
+summary(airquality1)
+summary(monthly)
+```
+
+<br>
+
+###**Then we can started to plot our information:**
+
+
+First plot for the REal FEel monthly report:
+
+```{r}
+
+ggplot(airquality1, aes(x=RealFeel)) +
+geom_bar(width =.3)
+```
+
+<br>
+
+###**Heres another way to plot it using barplot**
+
+
+```{r}
+
+barplot(t(as.matrix(monthly)), main="MONTHLY REAL FEEL",beside=TRUE)
+```
+
+<br>
+
+##**Observations:**
+As noted by the Monthly data set and plot that temperature usually vary depending on the factors as solar radition and ozone temp. 
+The wind speed will affect that real feel temperature will also affect the real temperature as the formula can show.
+
+<br>
+
+***
+SOURCES: 
+
+To get the wind chill equation 
+http://planetcalc.com/2087/
+
+to get the apparent temperature equation 
+http://planetcalc.com/2089/
+
+<br>
